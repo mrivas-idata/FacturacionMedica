@@ -1,10 +1,17 @@
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Infrastructure.deps.json
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Infrastructure.dll
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Infrastructure.pdb
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Application.dll
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Domain.dll
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Application.pdb
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\bin\Debug\net10.0\FacturacionMedica.Domain.pdb
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.csproj.AssemblyReference.cache
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.AssemblyInfoInputs.cache
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.AssemblyInfo.cs
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.sourcelink.json
+C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\Facturac.C21CB326.Up2Date
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.dll
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\refint\FacturacionMedica.Infrastructure.dll
 C:\Repo\Consalud\src\FacturacionMedica.Infrastructure\obj\Debug\net10.0\FacturacionMedica.Infrastructure.pdb

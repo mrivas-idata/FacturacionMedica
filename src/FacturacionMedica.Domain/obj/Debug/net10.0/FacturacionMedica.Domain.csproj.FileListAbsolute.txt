@@ -16,6 +16,7 @@ C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedic
 C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedica.Domain.AssemblyInfoInputs.cache
 C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedica.Domain.AssemblyInfo.cs
 C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedica.Domain.csproj.CoreCompileInputs.cache
+C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedica.Domain.sourcelink.json
 C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedica.Domain.dll
 C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\refint\FacturacionMedica.Domain.dll
 C:\Repo\Consalud\src\FacturacionMedica.Domain\obj\Debug\net10.0\FacturacionMedica.Domain.pdb

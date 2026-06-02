@@ -1,0 +1,368 @@
+{
+  "info": {
+    "name": "FacturacionMedica API",
+    "description": "Colección de endpoints para la API de Facturación Médica.\n\nAutenticación: todas las requests requieren el header `X-Api-Key`.\n\nBase URL: http://localhost:5268",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5268",
+      "type": "string"
+    },
+    {
+      "key": "apiKey",
+      "value": "m+ykMhlPUHxKuppe+tASiyy36N5fxVpHvB5NbcrbIZc=",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Facturas",
+      "item": [
+        {
+          "name": "Obtener todas las facturas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion"]
+            },
+            "description": "Retorna la lista completa de facturas con el total de cada una calculado dinámicamente desde el detalle de productos."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Respuesta es un arreglo', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array');",
+                  "    pm.expect(body.length).to.be.greaterThan(0);",
+                  "});",
+                  "pm.test('Cada factura tiene totalFactura calculado', () => {",
+                  "    const body = pm.response.json();",
+                  "    body.forEach(f => {",
+                  "        pm.expect(f.totalFactura).to.be.a('number');",
+                  "        pm.expect(f.totalFactura).to.be.greaterThan(0);",
+                  "        const sumaDetalle = f.detalleFactura.reduce((acc, d) => acc + d.totalProducto, 0);",
+                  "        pm.expect(f.totalFactura).to.eql(sumaDetalle);",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Obtener facturas por comprador (RUT existente)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/comprador/21595854",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "comprador", "21595854"]
+            },
+            "description": "Retorna las facturas asociadas al comprador con RUT 21595854."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Todas las facturas pertenecen al comprador', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array');",
+                  "    body.forEach(f => pm.expect(f.rutComprador).to.eql(21595854));",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Obtener facturas por comprador (RUT inexistente)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/comprador/99999999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "comprador", "99999999"]
+            },
+            "description": "Intenta obtener facturas de un RUT que no existe. Espera 404."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 404', () => pm.response.to.have.status(404));",
+                  "pm.test('Mensaje de error presente', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Compradores",
+      "item": [
+        {
+          "name": "Comprador con mayor gasto",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/comprador/top-gasto",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "comprador", "top-gasto"]
+            },
+            "description": "Retorna el comprador que tiene el mayor monto total acumulado en compras."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Tiene rutComprador y totalCompras', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.have.property('rutComprador');",
+                  "    pm.expect(body).to.have.property('totalCompras');",
+                  "    pm.expect(body.totalCompras).to.be.a('number').and.greaterThan(0);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Totales por comprador",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/compradores/totales",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "compradores", "totales"]
+            },
+            "description": "Retorna la lista de compradores con el monto total de compras realizadas, ordenados de mayor a menor."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Lista no vacía y ordenada descendente', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array');",
+                  "    pm.expect(body.length).to.be.greaterThan(0);",
+                  "    for (let i = 0; i < body.length - 1; i++) {",
+                  "        pm.expect(body[i].totalCompras).to.be.at.least(body[i + 1].totalCompras);",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comunas",
+      "item": [
+        {
+          "name": "Facturas agrupadas por comuna",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/por-comuna",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "por-comuna"]
+            },
+            "description": "Retorna todas las facturas agrupadas por código de comuna, ordenadas por comunaComprador ascendente."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Cada grupo tiene comunaComprador y facturas', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array');",
+                  "    body.forEach(g => {",
+                  "        pm.expect(g).to.have.property('comunaComprador');",
+                  "        pm.expect(g).to.have.property('facturas');",
+                  "        pm.expect(g.facturas).to.be.an('array');",
+                  "        pm.expect(g.facturas.length).to.be.greaterThan(0);",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Facturas por comuna (comuna existente)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/por-comuna/65",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "por-comuna", "65"]
+            },
+            "description": "Retorna las facturas correspondientes a la comuna 65."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Todas las facturas son de la comuna 65', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an('array');",
+                  "    body.forEach(f => pm.expect(f.comunaComprador).to.eql(65));",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Facturas por comuna (comuna inexistente)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion/por-comuna/9999",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion", "por-comuna", "9999"]
+            },
+            "description": "Intenta obtener facturas de una comuna que no existe. Espera 404."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 404', () => pm.response.to.have.status(404));",
+                  "pm.test('Mensaje de error presente', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seguridad",
+      "item": [
+        {
+          "name": "Sin API Key → 401",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion"]
+            },
+            "description": "Verifica que sin el header X-Api-Key se obtiene 401 Unauthorized."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 401 sin API Key', () => pm.response.to.have.status(401));",
+                  "pm.test('Mensaje de error en respuesta', () => {",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "API Key incorrecta → 401",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Api-Key",
+                "value": "clave-incorrecta"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/facturacion",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "facturacion"]
+            },
+            "description": "Verifica que con una API Key incorrecta se obtiene 401 Unauthorized."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 401 con API Key incorrecta', () => pm.response.to.have.status(401));"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

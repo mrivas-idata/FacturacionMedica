@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Repo\\Consalud\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{59570930-FB06-A2D4-A86B-6F4EAA3031A2}|src\\FacturacionMedica.Api\\FacturacionMedica.Api.csproj|c:\\repo\\consalud\\src\\facturacionmedica.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59570930-FB06-A2D4-A86B-6F4EAA3031A2}|src\\FacturacionMedica.Api\\FacturacionMedica.Api.csproj|solutionrelative:src\\facturacionmedica.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59570930-FB06-A2D4-A86B-6F4EAA3031A2}|src\\FacturacionMedica.Api\\FacturacionMedica.Api.csproj|c:\\repo\\consalud\\src\\facturacionmedica.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59570930-FB06-A2D4-A86B-6F4EAA3031A2}|src\\FacturacionMedica.Api\\FacturacionMedica.Api.csproj|solutionrelative:src\\facturacionmedica.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Repo\\Consalud\\src\\FacturacionMedica.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\FacturacionMedica.Api\\Program.cs",
+              "ToolTip": "C:\\Repo\\Consalud\\src\\FacturacionMedica.Api\\Program.cs",
+              "RelativeToolTip": "src\\FacturacionMedica.Api\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAswDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T15:21:26.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApiKeyMiddleware.cs",
+              "DocumentMoniker": "C:\\Repo\\Consalud\\src\\FacturacionMedica.Api\\Middleware\\ApiKeyMiddleware.cs",
+              "RelativeDocumentMoniker": "src\\FacturacionMedica.Api\\Middleware\\ApiKeyMiddleware.cs",
+              "ToolTip": "C:\\Repo\\Consalud\\src\\FacturacionMedica.Api\\Middleware\\ApiKeyMiddleware.cs",
+              "RelativeToolTip": "src\\FacturacionMedica.Api\\Middleware\\ApiKeyMiddleware.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T13:58:44.419Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

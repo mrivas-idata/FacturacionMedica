@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Middleware\" />
-    <Folder Include="Extensions\" />
+    <ProjectReference Include="..\FacturacionMedica.Application\FacturacionMedica.Application.csproj" />
+    <ProjectReference Include="..\FacturacionMedica.Infrastructure\FacturacionMedica.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet remove *)",
+      "PowerShell($conn = Get-NetTCPConnection -LocalPort 5268 -ErrorAction SilentlyContinue; if \\($conn\\) { Stop-Process -Id $conn.OwningProcess -Force -ErrorAction SilentlyContinue }; Write-Output \"Proceso detenido\")"
+    ]
+  }
+}
