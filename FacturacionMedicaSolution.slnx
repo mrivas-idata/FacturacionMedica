@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FacturacionMedica.Api/FacturacionMedica.Api.csproj" />
+    <Project Path="src/FacturacionMedica.Application/FacturacionMedica.Application.csproj" />
+    <Project Path="src/FacturacionMedica.Domain/FacturacionMedica.Domain.csproj" />
+    <Project Path="src/FacturacionMedica.Infrastructure/FacturacionMedica.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FacturacionMedica.Test/FacturacionMedica.Test.csproj" />
+  </Folder>
+</Solution>
