@@ -1,0 +1,10 @@
+[
+  {"nombre": "Abogados Moreno y Cía", "servicio": "Automatizaciones con IA", "estado": "activo", "notas": "Informe de mejoras entregado 05/08/2026; ejecutar acciones inmediatas y migrar Trello a API."},
+  {"nombre": "iProyecta", "servicio": "Migración de correo a Google Workspace", "estado": "activo", "notas": "≈78 GB; cambio de MX 08/08/2026; cierre del servidor anterior a fines de agosto."},
+  {"nombre": "Agrovial", "servicio": "Cotización", "estado": "prospecto", "notas": "Cotización enviada en julio 2026; hacer seguimiento."},
+  {"nombre": "Tecnigen", "servicio": "Propuesta", "estado": "prospecto", "notas": "Propuesta pendiente de preparar."},
+  {"nombre": "ISO Consulting", "servicio": "Alianza / postulación", "estado": "prospecto", "notas": "Enviar currículum."},
+  {"nombre": "Raúl", "servicio": "Sitio web", "estado": "entregado", "notas": "Sitio publicado; incluir en informes automáticos de sitios."},
+  {"nombre": "Mutual", "servicio": "Prospección", "estado": "prospecto", "notas": "Ya se consultó por proyectos; seguimiento."},
+  {"nombre": "Radio Ritmo", "servicio": "Difusión en radio", "estado": "activo", "notas": "Entrevistas y sesiones de ciberseguridad en San Vicente."}
+]

@@ -1,0 +1,14 @@
+[
+  {"id": 1, "area": "consalud", "tarea": "Terminar servicio de Bonos", "fecha_limite": null, "hecho": false},
+  {"id": 2, "area": "consalud", "tarea": "Publicar package", "fecha_limite": null, "hecho": false},
+  {"id": 3, "area": "idata", "tarea": "Enviar curriculum a ISO Consulting", "fecha_limite": null, "hecho": false},
+  {"id": 4, "area": "idata", "tarea": "Publicar sitio web de Raúl", "fecha_limite": null, "hecho": true},
+  {"id": 5, "area": "idata", "tarea": "Automatizar informes de cada sitio web", "fecha_limite": null, "hecho": false},
+  {"id": 6, "area": "idata", "tarea": "Enviar facturas de cobro julio 2026", "fecha_limite": null, "hecho": true},
+  {"id": 7, "area": "idata", "tarea": "Preparar propuesta Tecnigen", "fecha_limite": null, "hecho": false},
+  {"id": 8, "area": "idata", "tarea": "Preguntar a Mutual por proyectos", "fecha_limite": null, "hecho": true},
+  {"id": 9, "area": "idata", "tarea": "Dar de baja membresías", "fecha_limite": null, "hecho": false},
+  {"id": 10, "area": "proyectos", "tarea": "iDataSeguro: publicar como landing page y SaaS", "fecha_limite": null, "hecho": true},
+  {"id": 11, "area": "proyectos", "tarea": "MiSGSI", "fecha_limite": null, "hecho": false},
+  {"id": 12, "area": "proyectos", "tarea": "iReservo app", "fecha_limite": null, "hecho": false}
+]
