@@ -44,6 +44,11 @@ def _preguntar(jarvis: Jarvis, texto: str) -> None:
         jarvis.preguntar(texto)
     except anthropic.AuthenticationError:
         print("\n[Error] Credenciales inválidas. Define ANTHROPIC_API_KEY (ver README).")
+    except TypeError as exc:
+        if "authentication" not in str(exc):
+            raise
+        print("\n[Error] Falta la credencial de Claude. Define ANTHROPIC_API_KEY o ejecuta "
+              "`ant auth login` (ver README).")
     except anthropic.RateLimitError:
         print("\n[Error] Límite de uso alcanzado. Intenta en unos segundos.")
     except anthropic.APIStatusError as exc:
